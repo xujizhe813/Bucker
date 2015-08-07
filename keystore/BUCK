@@ -1,0 +1,6 @@
+keystore(
+    name = 'app-keystore',
+    store = 'bucker.jks',
+    properties = 'bucker.jks.properties',
+    visibility = ['PUBLIC'],
+)

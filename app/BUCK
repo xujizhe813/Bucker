@@ -1,0 +1,37 @@
+android_resource(
+  name = 'app-res',
+  res = 'src/main/res',
+  package = 'com.hyxf.bucker',
+  assets = 'src/main/assets',
+)
+
+prebuilt_jar(
+  name = 'gson',
+  binary_jar = 'libs/gson.jar',
+)
+
+android_library(
+  name = 'app-src',
+  srcs = glob(['src/main/java/**/*.java']),
+  deps = [
+    ':gson',
+    '//third:support-v7',
+    '//third:support-v4',
+    ':build-config',
+    ':app-res',
+  ],
+)
+
+android_build_config(
+  name = 'build-config',
+  package = 'com.hyxf.bucker',
+)
+
+android_binary(
+  name = 'app',
+  manifest = 'src/main/AndroidManifest.xml',
+  keystore = '//keystore:app-keystore',
+  deps = [
+    ':app-src',
+  ],
+)

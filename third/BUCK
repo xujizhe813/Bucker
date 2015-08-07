@@ -1,0 +1,11 @@
+android_prebuilt_aar(
+    name = 'support-v7',
+    aar = 'appcompat-v7-22.2.0.aar',
+    visibility = ['PUBLIC'],
+)
+
+android_prebuilt_aar(
+    name = 'support-v4',
+    aar = 'support-v4-22.2.0.aar',
+    visibility = ['PUBLIC'],
+)
